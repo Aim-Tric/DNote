@@ -70,11 +70,10 @@ export default {
     update () {
       let newObj = JSON.parse(JSON.stringify(this.file))
       newObj.body = newObj.body.replaceAll("\n", "[(br)]")
-      console.log(newObj)
       updateFile(newObj, resp => {
-        this.$message.success(resp.data)
+        this.$message.success(resp.msg)
       }, resp => {
-        this.$message.error(resp)
+        this.$message.error(resp.msg)
       })
     },
     toggleEditable () {

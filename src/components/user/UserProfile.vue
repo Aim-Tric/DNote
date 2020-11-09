@@ -82,7 +82,7 @@ export default {
       }).then(action => {
         this.form.editable = false
         updateUserInfo(resp => {
-          this.$message.success(resp.data)
+          this.$message.success(resp.msg)
         }, error => {
           this.$message.error(error)
         })

@@ -14,7 +14,7 @@ export async function asyncFileList(id) {
 
 export async function updateFile(file, success, failure) {
   let resp = await update(file);
-  if(resp.status === 200) {
+  if(resp.code === 10000) {
     success(resp)
   } else {
     failure(resp)

@@ -11,14 +11,14 @@ export function login(noteUser, success, failure) {
            'content-type': 'application/x-www-form-urlencoded',
         }
       }).then(resp => {
-          if (resp.data.statusCodeValue === 200) {
+          if (resp.code === 10000) {
             getUserBreif().then(r => {
               vuex.state.user = r.data
               sessionStorage.setItem("user", r.data)
-              success(resp.data)
+              success(resp.msg)
             })
           } else {
-            failure(resp.data)
+            failure(resp.msg)
           }
       }).catch(failure)
 }

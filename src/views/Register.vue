@@ -48,7 +48,9 @@
 </template>
 
 <script>
-import { register } from "@/service/UserService"
+import {
+  register
+} from "@/service/UserService"
 export default {
   mounted () {
     const vm = this
@@ -93,10 +95,22 @@ export default {
         nickName: "",
       },
       rules: {
-        phone: [{ validator: validatePhone, trigger: "blur" }],
-        checkPass: [{ validator: checkPass, trigger: "blur" }],
-        password: [{ validator: validatePass, trigger: "blur" }],
-        username: [{ validator: checkUsername, trigger: "blur" }],
+        phone: [{
+          validator: validatePhone,
+          trigger: "blur"
+        }],
+        checkPass: [{
+          validator: checkPass,
+          trigger: "blur"
+        }],
+        password: [{
+          validator: validatePass,
+          trigger: "blur"
+        }],
+        username: [{
+          validator: checkUsername,
+          trigger: "blur"
+        }],
       },
     };
   },
@@ -141,6 +155,7 @@ export default {
     window.removeEventListener('keydown', this.keyDownRegister, false);
   }
 };
+
 </script>
 
 <style lang="scss" scoped>
